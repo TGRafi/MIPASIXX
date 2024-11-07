@@ -1,0 +1,167 @@
+*, html{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color:black;
+    overflow-x: hidden;
+}
+
+nav {
+    background-color: rgb(55, 55, 55);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav div img {
+    width: 75px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 8px 0;
+    transition-duration: 300ms;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+nav ul li a:hover {
+    color: rgb(255, 105, 105);
+    border-bottom: 1px solid rgb(255, 158, 158);
+}
+
+.menu-icon {
+    font-size: 24px;
+    display: none;
+}
+
+@media only screen and (max-width : 768px) {
+    nav {
+        flex-wrap: wrap;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li:last-of-type {
+        padding-bottom: 8px;
+    }
+
+    nav ul.hidden {
+        display: none;
+    }
+
+    .menu-icon {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.judul {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 8px 8px;
+    text-align: center;
+}
+
+.container .card img {
+    width: 500px;
+}
+
+.container {
+    width: 99%;
+    background-color: rgba(20, 20, 20, 0.5);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.img-title {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /*background-color: rgba(5, 5, 5, 0.7);*/
+    background-image: linear-gradient(to bottom, rgba(5,5,5,0), rgba(5,5,5,0.8));
+    top: 200px;
+    transition: all 0.5s ease-in;
+}
+
+.img-title p,h3 {
+    text-align: center;
+    color: #fff;
+    line-height: 2px;
+    position: relative;
+    top: 130px;
+    text-shadow: 1px 1px rgba(5, 5, 5, 0.5);
+}
+
+.card:hover .img-title {
+    top: 0;
+    transition: all 0.5s ease-out;
+}
+
+.card img {
+    transform: scale(1);
+    transition: all 0.3s ease-out;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in;
+}
+
+a {
+    line-height: 0;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 100;
+    text-align: center;
+    padding: 200px 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.1s ease-out;
+}
+
+.overlay img {
+    width: 1000px;
+    height: 250px;
+    margin: auto 0;
+}
+
+.overlay:target {
+    bottom: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: all 0.1s ease-in;
+}
